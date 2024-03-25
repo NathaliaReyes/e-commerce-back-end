@@ -36,11 +36,11 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   // create a new category
   try {
-    if (categoryData.category_name) {
+    if (req.body.category_name) {
       // Check if the category exists
       const existingCategory = await Category.findOne({
       where: {
-        category_name: categoryData.category_name
+        category_name: req.body.category_name
       }
       });
       // If the category exists, return a 400 error
