@@ -37,6 +37,24 @@ router.post('/', async (req, res) => {
   // create a new category
   try {
     const categoryData = await Category.create(req.body)
+    if (categoryData.category_name) {
+      // Check if the category exists
+      const existingCategory = await Category.findOne({
+      where: {
+        category_name: categoryData.category_name
+      }
+      });
+      // If the category exists, return a 400 error
+      if (existingCategory) {
+      res.status(400).json({ message: 'This Category is not accepted (Make sure is a new Category)!' });
+      return;
+      }
+    } 
+    // If the category name is empty, return a 400 error
+    if(categoryData.category_name === ""){
+      res.status(400).json({ message: 'Category name is required!' });
+      return;
+    }
     res.status(200).json(categoryData);
   } catch(err) {
     res.status(500).json(err);
