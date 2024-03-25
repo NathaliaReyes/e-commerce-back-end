@@ -14,7 +14,7 @@ Entity Relationship Diagram:
 📍![ERD](/Assets/demos/ERD/ERD_e-commerce.png)
 
 The following walkthrough video demonstrates the appearance and functionality of the command-line application:
-[APPEARANCE-APPLICATION]()
+[APPEARANCE-APPLICATION](https://drive.google.com/file/d/1EdgyrjSkWPqYjq5zyFyTPVnsosIuaZmw/view?usp=sharing)
 
 ## Table of Contents
 - [🔙🔚 e-commerce-back-end](#-e-commerce-back-end)
@@ -49,7 +49,7 @@ Please refer to the `Usage` section for more details on how to use the applicati
 
 This application provides a back-end for an e-commerce site. You can test the API endpoints using a tool like Postman or Insomnia.
 
-The API has endpoints for three different categories: Products, Categories, and Tags. Each category has endpoints for creating, reading, updating, and deleting data.
+The API has endpoints for three different categories: Products, Categories, and Tags. Each category has endpoints for creating, reading, updating, and deleting data. Go to the Assets file and find the POSTMAN collection file, run the file in the software and follow instructions below:
 
 - **Products**: Use the `/api/products` endpoint to create and read products. You can also use `/api/products/:id` endpoint to read, update, or delete on a specific product.
 
