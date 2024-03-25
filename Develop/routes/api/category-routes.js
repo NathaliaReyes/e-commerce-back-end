@@ -36,7 +36,6 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   // create a new category
   try {
-    const categoryData = await Category.create(req.body)
     if (categoryData.category_name) {
       // Check if the category exists
       const existingCategory = await Category.findOne({
@@ -55,6 +54,7 @@ router.post('/', async (req, res) => {
       res.status(400).json({ message: 'Category name is required!' });
       return;
     }
+    const categoryData = await Category.create(req.body)
     res.status(200).json(categoryData);
   } catch(err) {
     res.status(500).json(err);
